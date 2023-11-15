@@ -8,7 +8,7 @@ public class Board {
 
     public Board(int rows, int columns) {
         if (rows < 1 || columns < 1 ){
-            throw  new BoardException(" Erro na criação do tabuleiro: É necessario pelomenos 1 linha e 1 coluna. ");
+            throw  new BoardException("Error when creating the board: At least 1 row and 1 column are required. ");
         }
         this.rows = rows;
         this.columns = columns;
@@ -47,7 +47,7 @@ public class Board {
 
     public Piece removePiece(Position position) {
         if (!positionExists(position)) {
-            throw new BoardException("POsition not on the board");
+            throw new BoardException("Position not on the board");
 
         }
         if (piece(position) == null) {
