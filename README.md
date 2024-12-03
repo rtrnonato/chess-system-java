@@ -43,6 +43,8 @@ O projeto está organizado em pacotes para facilitar a manutenção:
 - **`chess.pieces`**: Classes específicas das peças de xadrez.
   - `King`, `Queen`, `Bishop`, `Knight`, `Rook`, `Pawn`.
 
+![Mobile 1](https://github.com/rtrnonato/chess-system-java/blob/main/chess-system-design.png)
+
 ---
 
 ## 🔧 Tecnologias Utilizadas
