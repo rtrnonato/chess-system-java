@@ -30,10 +30,12 @@ public class ChessPosition {
         this.row = row;
     }
 
+    // Converte a posição no formato de xadrez para o formato interno de tabuleiro (linhas e colunas baseadas em índices)
     protected Position toPosition() {
         return new Position(8-row,column - 'a');
     }
 
+    // Converte uma posição interna do tabuleiro para o formato de xadrez
     protected static  ChessPosition fromPosition(Position position) {
         return new ChessPosition((char)('a' + position.getColunm()), 8 - position.getRow());
     }

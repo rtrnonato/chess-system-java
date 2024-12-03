@@ -34,6 +34,7 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+    // Método para ler a posição de xadrez digitada pelo usuário (como "e2", "d5", etc.)
     public  static ChessPosition readChessPosition(Scanner sc) {
         try {
             String s = sc.nextLine();
@@ -46,6 +47,7 @@ public class UI {
         }
     }
 
+    // Método para imprimir o estado da partida: tabuleiro, peças capturadas, turno e status do jogo (se está em xeque, xeque-mate, etc.)
     public static void printMatch(ChessMatch chessMatch, List<ChessPiece> captured) {
         printBoard(chessMatch.getPieces());
         System.out.println();
@@ -63,6 +65,7 @@ public class UI {
         }
     }
 
+    // Método para imprimir o tabuleiro de xadrez
     public static void printBoard(ChessPiece[][] pieces) {
         for (int i = 0; i < pieces.length; i++) {
             System.out.print((8 - i) + " ");
@@ -74,6 +77,7 @@ public class UI {
         System.out.println("  a b c d e f g h");
     }
 
+    // Método para imprimir o tabuleiro, com destaque para os movimentos possíveis das peças
     public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
         for (int i = 0; i < pieces.length; i++) {
             System.out.print((8 - i) + " ");
@@ -85,6 +89,8 @@ public class UI {
         System.out.println("  a b c d e f g h");
     }
 
+    // Método auxiliar para imprimir uma peça em uma posição específica
+    // Se a peça estiver em uma casa com movimento possível, o fundo da casa será destacado
     private static void printPiece(ChessPiece piece, boolean background) {
         if (background) {
             System.out.print(ANSI_GREEN_BACKGROUND);
@@ -103,6 +109,7 @@ public class UI {
         System.out.print(" ");
     }
 
+    // Método para imprimir as peças capturadas
     private static void printCapturedPieces(List<ChessPiece> captured) {
         List<ChessPiece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());
         List<ChessPiece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
@@ -118,5 +125,4 @@ public class UI {
         System.out.println();
 
     }
-
 }

@@ -11,13 +11,17 @@ public abstract class Piece {
     public Board getBoard() {
         return board;
     }
-
+    
+    // Método abstrato para ser implementado pelas subclasses (peças específicas)
+    // Retorna uma matriz de booleanos indicando os movimentos possíveis da peça
     public abstract boolean[][] possibleMoves ();
 
+    // Verifica se a peça pode se mover para a posição fornecida
     public boolean possibleMove(Position position) {
        return possibleMoves()[position.getRow()][position.getColunm()];
     }
 
+    // Verifica se a peça tem algum movimento possível
     public boolean isThereAnyPossibleMove() {
         boolean[][] mat = possibleMoves();
         for (int i = 0; i < mat.length; i++) {
